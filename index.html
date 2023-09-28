@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="icon" href="./favicon-32x32.png">
+    <title>Form Validation</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up Today</h1>
+
+        <form id="form">
+            <div class="form_grp" novalidate >
+                <label for="nme">Full Name</label>
+                <input type="text" id="nme" placeholder="Full name" required 
+                minlength="3"
+                maxlength="50">
+            </div><br>
+            <!-- Phone number -->
+                <div class="form_grp">
+                    <label for="phn">Phone number</label>
+                    <input type="tel" id="phn" placeholder="000-000-0000"required 
+                     pattern="{0-9}{3}-{0-9}{3}-{0-9}{4}">
+                </div><br>
+                    <!-- Email -->
+                        <div class="form_grp">
+                            <label for="mail">Email Address</label>
+                            <input type="email" id="mail" placeholder="@gmail.com"required
+                           >
+                        </div><br>
+                        <!-- Country-->
+                            <div class="form_grp">
+                                <label for="country">Country
+                                 <select name="country" id="country" required>
+                                    <option value="null" selected disabled hidden>Select An Option</option>
+                                    <option value="india">India</option>
+                                    <option value="usa">USA</option>
+                                    <option value="china">China</option>
+                                    <option value="paris">Nigeria</option>
+                                    <!-- <span id="countryErr"></span> -->
+                                 </select>
+                                </label>
+                            </div><br>
+
+                            <!-- Gender -->
+
+                            <div>
+                                <p>Select your gender</p>
+                                <input type="radio" id="male" name="gender" class="inline" value="male">
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="gender" class="inline" value="female">
+                                <label for="female">Female</label>
+                            </div><br>
+                            <!-- password -->
+                            <div class="form_grp">
+                                <label for="psswrd">Password</label>
+                                <input type="password" id="psswrd" placeholder=" At least 8 or more character"
+                                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required >
+                            </div><br>
+                            <!-- confirm password -->
+                            <div class="form_grp">
+                                <label for="cnfrmpsswrd"> Confirm Password</label>
+                                <input type="password" id="cnfrmpsswrd" placeholder=" At least 8 or more character"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required >
+                            </div><br>
+                            <button type="submit">Register</button><br>
+        </form>
+        <!-- Message container -->
+        <div class="message_container">
+            <h3 id="message">Don't Hesistate</h3>
+        </div>
+    </div>
+
+
+    <script src="./miid.js"></script>
+</body>
+</html>
